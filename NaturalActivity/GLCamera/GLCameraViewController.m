@@ -809,10 +809,8 @@ const long kBadEdgeBlocks = 3;
 // current server we are talking to NO trailing /.
 +(NSString*)serverBase;
 {
-//    return @"http://192.168.11.233:9292";
-        return @"http://127.0.0.1:8000";
-//    return @"http://192.168.0.156:9292";
-//    return @"https://cosmicray.herokuapp.com";
+//        return @"http://127.0.0.1:8000";
+    return @"https://api.credo.science";
 }
 
 +(BOOL)locationServicesON;

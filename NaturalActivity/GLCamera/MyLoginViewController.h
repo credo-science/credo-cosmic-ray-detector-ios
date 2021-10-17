@@ -18,7 +18,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *passwordTxtField;
 @property (strong, nonatomic) IBOutlet UIButton *loginToCredoButton;
 - (IBAction)loginToCredoButtonPressed:(id)sender;
-
+-(void)placePostRequestWithURL:(NSString *)action withData:(NSDictionary *)dataToSend withHandler:(void (^)(NSURLResponse *response, NSData *data, NSError *error)) ourBlock;
 
 @end
 
