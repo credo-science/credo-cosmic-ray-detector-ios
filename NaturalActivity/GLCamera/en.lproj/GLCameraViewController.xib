@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GLCameraViewController">
+            <connections>
+                <outlet property="eventsCount" destination="7oZ-eY-XwF" id="B30-BC-bkf"/>
+                <outlet property="showTopButton" destination="czn-C2-ptV" id="lOV-pk-9Ls"/>
+                <outlet property="swipeView" destination="f1Y-NO-SGq" id="XQm-LR-YYU"/>
+                <outlet property="view" destination="1" id="3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1" customClass="EAGLView">
+            <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1Y-NO-SGq" customClass="SwipeView">
+                    <rect key="frame" x="0.0" y="0.0" width="736" height="374"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lvz-Dn-19L">
+                    <rect key="frame" x="0.0" y="370" width="736" height="44"/>
+                    <items>
+                        <barButtonItem title="Show Top" id="czn-C2-ptV">
+                            <connections>
+                                <action selector="toggleTop10:" destination="-1" id="sKs-z1-ERH"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="Mxi-iw-pcc"/>
+                        <barButtonItem title="Settings" id="KDH-ck-kr9">
+                            <connections>
+                                <action selector="helpButtonPressed:" destination="-1" id="0sG-1Q-GIh"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="rXN-xA-GF5"/>
+                        <barButtonItem title="0 Events" id="7oZ-eY-XwF"/>
+                    </items>
+                </toolbar>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="f1Y-NO-SGq" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="CSq-uz-Sfr"/>
+                <constraint firstItem="Lvz-Dn-19L" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="D9L-kA-XHf"/>
+                <constraint firstAttribute="trailing" secondItem="Lvz-Dn-19L" secondAttribute="trailing" id="GS5-Ld-PVi"/>
+                <constraint firstItem="f1Y-NO-SGq" firstAttribute="top" secondItem="1" secondAttribute="top" id="Iaa-Ka-MgU"/>
+                <constraint firstAttribute="bottom" secondItem="f1Y-NO-SGq" secondAttribute="bottom" constant="40" id="iTp-aP-FSv"/>
+                <constraint firstAttribute="bottom" secondItem="Lvz-Dn-19L" secondAttribute="bottom" id="ngl-Va-0Ng"/>
+                <constraint firstAttribute="trailing" secondItem="f1Y-NO-SGq" secondAttribute="trailing" id="pyI-eE-v9O"/>
+            </constraints>
+            <nil key="simulatedBottomBarMetrics"/>
+            <point key="canvasLocation" x="-141" y="242"/>
+        </view>
+    </objects>
+</document>
