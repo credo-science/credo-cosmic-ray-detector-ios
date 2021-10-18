@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0C3AC7D4271B51CC005039FF /* MyLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3AC7D2271B51CC005039FF /* MyLoginViewController.m */; };
 		0C3AC7D5271B51CC005039FF /* MyLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C3AC7D3271B51CC005039FF /* MyLoginViewController.xib */; };
+		3A60369CD6F52D46311DAB12 /* Pods_Cosmic_Ray.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05A63329A15C62A93BE55965 /* Pods_Cosmic_Ray.framework */; };
 		4004A8D8271E1AF30092FC0F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4004A8D7271E1AF30092FC0F /* Colors.xcassets */; };
 		4039446F271CB95100064A08 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4039446D271CB95100064A08 /* LoginViewController.swift */; };
 		40394470271CB95100064A08 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4039446E271CB95100064A08 /* LoginViewController.xib */; };
@@ -62,6 +63,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05A63329A15C62A93BE55965 /* Pods_Cosmic_Ray.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cosmic_Ray.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C3AC7D1271B51CC005039FF /* MyLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyLoginViewController.h; sourceTree = "<group>"; };
 		0C3AC7D2271B51CC005039FF /* MyLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyLoginViewController.m; sourceTree = "<group>"; };
 		0C3AC7D3271B51CC005039FF /* MyLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyLoginViewController.xib; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 		4039446C271CB95100064A08 /* Cosmic Ray-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cosmic Ray-Bridging-Header.h"; sourceTree = "<group>"; };
 		4039446D271CB95100064A08 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4039446E271CB95100064A08 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		5EB4C2DFB5A62E8B2E294B60 /* Pods-Cosmic Ray.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cosmic Ray.release.xcconfig"; path = "Target Support Files/Pods-Cosmic Ray/Pods-Cosmic Ray.release.xcconfig"; sourceTree = "<group>"; };
 		6D29779720703D72009AC20C /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
 		6D29779920703D83009AC20C /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		6D29779B20703EC3009AC20C /* shader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; name = shader.metal; path = Metal/shader.metal; sourceTree = "<group>"; };
@@ -142,6 +145,7 @@
 		77547FA713DF551500B12AC0 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		77547FA913DF566600B12AC0 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		77547FAB13DF575700B12AC0 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		B9D4E608FB309156BD20630A /* Pods-Cosmic Ray.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cosmic Ray.debug.xcconfig"; path = "Target Support Files/Pods-Cosmic Ray/Pods-Cosmic Ray.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +169,7 @@
 				77547F7B13DF518700B12AC0 /* CoreGraphics.framework in Frameworks */,
 				77547F7D13DF518700B12AC0 /* QuartzCore.framework in Frameworks */,
 				77547F7F13DF518700B12AC0 /* OpenGLES.framework in Frameworks */,
+				3A60369CD6F52D46311DAB12 /* Pods_Cosmic_Ray.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +186,16 @@
 				4039446E271CB95100064A08 /* LoginViewController.xib */,
 			);
 			name = Login;
+			sourceTree = "<group>";
+		};
+		4E1F45B96EA2E99A2D12C520 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B9D4E608FB309156BD20630A /* Pods-Cosmic Ray.debug.xcconfig */,
+				5EB4C2DFB5A62E8B2E294B60 /* Pods-Cosmic Ray.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		6D55AEDB2061C4C900825BEA /* OpenCL */ = {
@@ -240,6 +255,7 @@
 				77547F7513DF518600B12AC0 /* Frameworks */,
 				77547F7313DF518600B12AC0 /* Products */,
 				6DCC04A21DD66E5B0002EAD5 /* Images */,
+				4E1F45B96EA2E99A2D12C520 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -270,6 +286,7 @@
 				77547FA513DF550500B12AC0 /* AVFoundation.framework */,
 				77547F7C13DF518700B12AC0 /* QuartzCore.framework */,
 				77547F7E13DF518700B12AC0 /* OpenGLES.framework */,
+				05A63329A15C62A93BE55965 /* Pods_Cosmic_Ray.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -328,9 +345,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 77547F9B13DF518700B12AC0 /* Build configuration list for PBXNativeTarget "Cosmic Ray" */;
 			buildPhases = (
+				39AE96F9398768223E28EC23 /* [CP] Check Pods Manifest.lock */,
 				77547F6E13DF518600B12AC0 /* Sources */,
 				77547F6F13DF518600B12AC0 /* Frameworks */,
 				77547F7013DF518600B12AC0 /* Resources */,
+				4DB915A7487691473D3D0CAA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -396,6 +415,49 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		39AE96F9398768223E28EC23 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Cosmic Ray-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4DB915A7487691473D3D0CAA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Cosmic Ray/Pods-Cosmic Ray-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Cosmic Ray/Pods-Cosmic Ray-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		77547F6E13DF518600B12AC0 /* Sources */ = {
@@ -542,6 +604,7 @@
 		};
 		77547F9C13DF518700B12AC0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9D4E608FB309156BD20630A /* Pods-Cosmic Ray.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -566,6 +629,7 @@
 		};
 		77547F9D13DF518700B12AC0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5EB4C2DFB5A62E8B2E294B60 /* Pods-Cosmic Ray.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
