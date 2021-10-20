@@ -80,6 +80,7 @@ const double kDesiredFrameIntervalSeconds = 30.0;
 @property NSDate* rayTime;
 @property NSMutableArray* blockImages;
 
+@property WarmupViewController *warmupViewController;
 
 @property BOOL deviceIsOlderNeedsPixelBoost;
 @end

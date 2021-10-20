@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C3AC7D4271B51CC005039FF /* MyLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3AC7D2271B51CC005039FF /* MyLoginViewController.m */; };
-		0C3AC7D5271B51CC005039FF /* MyLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C3AC7D3271B51CC005039FF /* MyLoginViewController.xib */; };
 		3A60369CD6F52D46311DAB12 /* Pods_Cosmic_Ray.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05A63329A15C62A93BE55965 /* Pods_Cosmic_Ray.framework */; };
 		4004A8D8271E1AF30092FC0F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4004A8D7271E1AF30092FC0F /* Colors.xcassets */; };
+		4004A8E1271E2F840092FC0F /* CredoApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4004A8E0271E2F840092FC0F /* CredoApi.swift */; };
 		4039446F271CB95100064A08 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4039446D271CB95100064A08 /* LoginViewController.swift */; };
 		40394470271CB95100064A08 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4039446E271CB95100064A08 /* LoginViewController.xib */; };
+		40BA4DDB27208E510024E7EA /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BA4DDA27208E510024E7EA /* Credentials.swift */; };
+		40BA4DDD27208F480024E7EA /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BA4DDC27208F480024E7EA /* KeychainManager.swift */; };
+		40BA4DE127209AF80024E7EA /* CredoApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BA4DE027209AF80024E7EA /* CredoApiError.swift */; };
+		40BA4DE42720A7C10024E7EA /* CreadoApi+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BA4DE32720A7C10024E7EA /* CreadoApi+Login.swift */; };
+		40BA4DE72720ACF30024E7EA /* UIViewController+Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BA4DE62720ACF30024E7EA /* UIViewController+Spinner.swift */; };
 		6D29779820703D73009AC20C /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D29779720703D72009AC20C /* MetalKit.framework */; };
 		6D29779A20703D83009AC20C /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D29779920703D83009AC20C /* Metal.framework */; };
 		6D29779C20703EC3009AC20C /* shader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 6D29779B20703EC3009AC20C /* shader.metal */; };
@@ -64,13 +68,16 @@
 
 /* Begin PBXFileReference section */
 		05A63329A15C62A93BE55965 /* Pods_Cosmic_Ray.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cosmic_Ray.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0C3AC7D1271B51CC005039FF /* MyLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyLoginViewController.h; sourceTree = "<group>"; };
-		0C3AC7D2271B51CC005039FF /* MyLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyLoginViewController.m; sourceTree = "<group>"; };
-		0C3AC7D3271B51CC005039FF /* MyLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyLoginViewController.xib; sourceTree = "<group>"; };
 		4004A8D7271E1AF30092FC0F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		4004A8E0271E2F840092FC0F /* CredoApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredoApi.swift; sourceTree = "<group>"; };
 		4039446C271CB95100064A08 /* Cosmic Ray-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cosmic Ray-Bridging-Header.h"; sourceTree = "<group>"; };
 		4039446D271CB95100064A08 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4039446E271CB95100064A08 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		40BA4DDA27208E510024E7EA /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		40BA4DDC27208F480024E7EA /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		40BA4DE027209AF80024E7EA /* CredoApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredoApiError.swift; sourceTree = "<group>"; };
+		40BA4DE32720A7C10024E7EA /* CreadoApi+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreadoApi+Login.swift"; sourceTree = "<group>"; };
+		40BA4DE62720ACF30024E7EA /* UIViewController+Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Spinner.swift"; sourceTree = "<group>"; };
 		5EB4C2DFB5A62E8B2E294B60 /* Pods-Cosmic Ray.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cosmic Ray.release.xcconfig"; path = "Target Support Files/Pods-Cosmic Ray/Pods-Cosmic Ray.release.xcconfig"; sourceTree = "<group>"; };
 		6D29779720703D72009AC20C /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
 		6D29779920703D83009AC20C /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
@@ -176,16 +183,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4039446B271CB91A00064A08 /* Login */ = {
+		4004A8DD271E2F0B0092FC0F /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				0C3AC7D1271B51CC005039FF /* MyLoginViewController.h */,
-				0C3AC7D2271B51CC005039FF /* MyLoginViewController.m */,
-				0C3AC7D3271B51CC005039FF /* MyLoginViewController.xib */,
+				4004A8E0271E2F840092FC0F /* CredoApi.swift */,
+				40BA4DE027209AF80024E7EA /* CredoApiError.swift */,
+				40BA4DE32720A7C10024E7EA /* CreadoApi+Login.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		4004A8DE271E2F140092FC0F /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				4004A8DF271E2F1D0092FC0F /* Login */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		4004A8DF271E2F1D0092FC0F /* Login */ = {
+			isa = PBXGroup;
+			children = (
 				4039446D271CB95100064A08 /* LoginViewController.swift */,
 				4039446E271CB95100064A08 /* LoginViewController.xib */,
 			);
-			name = Login;
+			path = Login;
+			sourceTree = "<group>";
+		};
+		40BA4DD827208E380024E7EA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				40BA4DD927208E410024E7EA /* Keychain */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		40BA4DD927208E410024E7EA /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				40BA4DDA27208E510024E7EA /* Credentials.swift */,
+				40BA4DDC27208F480024E7EA /* KeychainManager.swift */,
+			);
+			path = Keychain;
+			sourceTree = "<group>";
+		};
+		40BA4DE52720ACDE0024E7EA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				40BA4DE62720ACF30024E7EA /* UIViewController+Spinner.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		4E1F45B96EA2E99A2D12C520 /* Pods */ = {
@@ -194,7 +241,6 @@
 				B9D4E608FB309156BD20630A /* Pods-Cosmic Ray.debug.xcconfig */,
 				5EB4C2DFB5A62E8B2E294B60 /* Pods-Cosmic Ray.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -294,8 +340,11 @@
 		77547F8013DF518700B12AC0 /* GLCamera */ = {
 			isa = PBXGroup;
 			children = (
+				40BA4DE52720ACDE0024E7EA /* Extensions */,
+				40BA4DD827208E380024E7EA /* Utils */,
+				4004A8DE271E2F140092FC0F /* Screens */,
+				4004A8DD271E2F0B0092FC0F /* Network */,
 				4004A8D7271E1AF30092FC0F /* Colors.xcassets */,
-				4039446B271CB91A00064A08 /* Login */,
 				4039446C271CB95100064A08 /* Cosmic Ray-Bridging-Header.h */,
 				6DFF83D31BB7386E00196F3A /* SwipeView.h */,
 				6DFF83D41BB7386E00196F3A /* SwipeView.m */,
@@ -402,7 +451,6 @@
 				6DCC04B21DDA52850002EAD5 /* HelpViewController.xib in Resources */,
 				6DCC04AD1DDA16450002EAD5 /* WarmupViewController.xib in Resources */,
 				6DCC04A11DD66D8A0002EAD5 /* Launch Screen.storyboard in Resources */,
-				0C3AC7D5271B51CC005039FF /* MyLoginViewController.xib in Resources */,
 				6DCC049F1DD66D540002EAD5 /* Images.xcassets in Resources */,
 				6DCC04A61DD66E5B0002EAD5 /* iphone6.png in Resources */,
 				77547F8D13DF518700B12AC0 /* Shader.fsh in Resources */,
@@ -447,10 +495,12 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Cosmic Ray/Pods-Cosmic Ray-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -466,23 +516,28 @@
 			files = (
 				6DBCE3B220719921008CFF22 /* pixelMath.c in Sources */,
 				6D9D2EE71DBD1E2900E154D9 /* JTSImageViewController.m in Sources */,
+				40BA4DE42720A7C10024E7EA /* CreadoApi+Login.swift in Sources */,
 				77547F8713DF518700B12AC0 /* main.m in Sources */,
 				6D9D2EE81DBD1E2900E154D9 /* JTSSimpleImageDownloader.m in Sources */,
+				40BA4DDD27208F480024E7EA /* KeychainManager.swift in Sources */,
 				6D5949EE205D694E00FD70D6 /* GLApplication.m in Sources */,
 				77547F8B13DF518700B12AC0 /* GLCameraAppDelegate.m in Sources */,
 				6D9D2EF11DBD5C8300E154D9 /* RadiationEvent.m in Sources */,
 				77547F9213DF518700B12AC0 /* EAGLView.m in Sources */,
 				6D29779C20703EC3009AC20C /* shader.metal in Sources */,
+				4004A8E1271E2F840092FC0F /* CredoApi.swift in Sources */,
+				40BA4DE72720ACF30024E7EA /* UIViewController+Spinner.swift in Sources */,
 				6DFF83D51BB7386E00196F3A /* SwipeView.m in Sources */,
 				4039446F271CB95100064A08 /* LoginViewController.swift in Sources */,
 				6DCC04B11DDA52850002EAD5 /* HelpViewController.m in Sources */,
-				0C3AC7D4271B51CC005039FF /* MyLoginViewController.m in Sources */,
 				6D55AEDF2065D35300825BEA /* MetalPixelProcessor.m in Sources */,
 				6D9D2EE61DBD1E2900E154D9 /* JTSImageInfo.m in Sources */,
 				6D9D2EEA1DBD1E2900E154D9 /* UIImage+JTSImageEffects.m in Sources */,
 				6DCC04AC1DDA16450002EAD5 /* WarmupViewController.m in Sources */,
+				40BA4DDB27208E510024E7EA /* Credentials.swift in Sources */,
 				6DB119091C3715FE00088B39 /* GLStillCamera.m in Sources */,
 				77547F9513DF518700B12AC0 /* GLCameraViewController.m in Sources */,
+				40BA4DE127209AF80024E7EA /* CredoApiError.swift in Sources */,
 				77547FA413DF54C500B12AC0 /* GLCamera.m in Sources */,
 				6D9D2EE51DBD1E2900E154D9 /* JTSAnimatedGIFUtility.m in Sources */,
 				6D9D2EE91DBD1E2900E154D9 /* UIApplication+JTSImageViewController.m in Sources */,
