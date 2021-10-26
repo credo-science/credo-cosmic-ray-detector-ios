@@ -810,8 +810,9 @@ const long kBadEdgeBlocks = 3;
 // current server we are talking to NO trailing /.
 +(NSString*)serverBase;
 {
+    return @"http://46.101.167.242";
 //        return @"http://127.0.0.1:8000";
-    return @"https://api.credo.science";
+//    return @"https://api.credo.science";
 }
 
 +(BOOL)locationServicesON;
@@ -856,7 +857,7 @@ const long kBadEdgeBlocks = 3;
     // The plan in prod is to write the Json to a file, and have something watch the folder and upload at will.
     // I'm starting with direct upload...
     
-    NSString* urlString = [NSString stringWithFormat:@"%@/api/ray", [GLCameraViewController serverBase]];
+    NSString* urlString = [NSString stringWithFormat:@"%@/api/v2/detection", [GLCameraViewController serverBase]];
     [self placePostRequestWithURL:urlString
                          withData:ray
                       withHandler:^(NSURLResponse *response, NSData *rawData, NSError *error) {
