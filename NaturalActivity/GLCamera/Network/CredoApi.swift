@@ -8,12 +8,13 @@
 import UIKit
 import Alamofire
 
-class CredoApi {
+class CredoApi: NSObject {
     
-    static let BASE_URL = "https://api.credo.science"
+//    static let BASE_URL = "https://api.credo.science"
+    static let BASE_URL = "http://46.101.167.242"
     
     // Singleton
-    static let shared = CredoApi()
+    @objc static let shared = CredoApi()
     
     var token: String = ""
     
@@ -43,7 +44,7 @@ class CredoApi {
         Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
     }()
     
-    private init() {
+    private override init() {
         // TODO: Consider add API Timeout
     }
 }

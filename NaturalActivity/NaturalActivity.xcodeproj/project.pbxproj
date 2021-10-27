@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3A60369CD6F52D46311DAB12 /* Pods_Cosmic_Ray.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05A63329A15C62A93BE55965 /* Pods_Cosmic_Ray.framework */; };
+		40041AA22729D89100BD92E4 /* CredoApi+Detection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40041AA12729D89100BD92E4 /* CredoApi+Detection.swift */; };
 		4004A8D8271E1AF30092FC0F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4004A8D7271E1AF30092FC0F /* Colors.xcassets */; };
 		4004A8E1271E2F840092FC0F /* CredoApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4004A8E0271E2F840092FC0F /* CredoApi.swift */; };
 		4039446F271CB95100064A08 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4039446D271CB95100064A08 /* LoginViewController.swift */; };
@@ -68,6 +69,7 @@
 
 /* Begin PBXFileReference section */
 		05A63329A15C62A93BE55965 /* Pods_Cosmic_Ray.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cosmic_Ray.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		40041AA12729D89100BD92E4 /* CredoApi+Detection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CredoApi+Detection.swift"; sourceTree = "<group>"; };
 		4004A8D7271E1AF30092FC0F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		4004A8E0271E2F840092FC0F /* CredoApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredoApi.swift; sourceTree = "<group>"; };
 		4039446C271CB95100064A08 /* Cosmic Ray-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cosmic Ray-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				4004A8E0271E2F840092FC0F /* CredoApi.swift */,
 				40BA4DE027209AF80024E7EA /* CredoApiError.swift */,
 				40BA4DE32720A7C10024E7EA /* CreadoApi+Login.swift */,
+				40041AA12729D89100BD92E4 /* CredoApi+Detection.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -530,6 +533,7 @@
 				6DFF83D51BB7386E00196F3A /* SwipeView.m in Sources */,
 				4039446F271CB95100064A08 /* LoginViewController.swift in Sources */,
 				6DCC04B11DDA52850002EAD5 /* HelpViewController.m in Sources */,
+				40041AA22729D89100BD92E4 /* CredoApi+Detection.swift in Sources */,
 				6D55AEDF2065D35300825BEA /* MetalPixelProcessor.m in Sources */,
 				6D9D2EE61DBD1E2900E154D9 /* JTSImageInfo.m in Sources */,
 				6D9D2EEA1DBD1E2900E154D9 /* UIImage+JTSImageEffects.m in Sources */,
