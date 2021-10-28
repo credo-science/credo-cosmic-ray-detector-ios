@@ -80,10 +80,14 @@ extension CredoApi {
         }
         let request = DetectionRequest(detections: detectionList, device_id: deviceID, device_type: deviceType, device_model: deviceModel, system_version: systemVersion, app_version: appVersion)
         
+        let headers: HTTPHeaders = [
+            "Authorization": "Token \(token)",
+        ]
         AF.request("\(CredoApi.BASE_URL)/api/v2/detection",
-                method: .post,
-                parameters: request,
-                encoder: JSONParameterEncoder.default
+                   method: .post,
+                   parameters: request,
+                   encoder: JSONParameterEncoder.default,
+                   headers: headers
         ).response { response in
             let data = try? response.result.get()
             completion?(data)
