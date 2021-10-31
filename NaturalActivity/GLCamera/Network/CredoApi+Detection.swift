@@ -41,7 +41,7 @@ class DetectionWrapper: NSObject {
     @objc var longitude: Float = 0.0
     @objc var altitude: Float = 0.0
     @objc var accuracy: Float = 0.0
-    @objc var provider: String = ""
+    @objc var provider: String = "gps"
     @objc var width: Int = 0
     @objc var height: Int = 0
     @objc var x: Int = 0

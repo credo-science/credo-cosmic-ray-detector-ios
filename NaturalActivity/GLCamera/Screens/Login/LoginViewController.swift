@@ -76,6 +76,7 @@ class LoginViewController: UIViewController {
         let glCameraVC = GLCameraViewController()
         glCameraVC.useVideoFrames = true
         gAppD.showWarmup(0)
+        CredoApi.shared.token = logineResponse.token
         self.navigationController?.pushViewController(glCameraVC, animated: true)
     }
     

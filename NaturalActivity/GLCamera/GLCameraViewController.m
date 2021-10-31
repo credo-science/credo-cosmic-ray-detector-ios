@@ -850,7 +850,7 @@ const long kBadEdgeBlocks = 3;
     for (NSDictionary* imageDict in self.blockImages)
     {
         DetectionWrapper *detectionWrapper = [[DetectionWrapper alloc] init];
-        detectionWrapper.timestamp = [self.rayTime timeIntervalSince1970];
+        detectionWrapper.timestamp = [self.rayTime timeIntervalSince1970] * 1000;
         detectionWrapper.latitude = self.recentLocation.coordinate.latitude;
         detectionWrapper.longitude = self.recentLocation.coordinate.longitude;
         detectionWrapper.altitude = self.recentLocation.altitude;
@@ -871,6 +871,7 @@ const long kBadEdgeBlocks = 3;
     //    detectionWrapper.black_threshold =
         detectionWrapper.frame_content = imageDict[@"pngDataBase64"];
     //    detectionWrapper.max =
+        [detectionArray addObject:detectionWrapper];
     }
     
     [[CredoApi shared] detection:detectionArray completion:NULL];
