@@ -8,18 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@class GLCameraViewController;
 @class WarmupViewController;
-@class MyLoginViewController;
-
 
 @interface GLCameraAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) GLCameraViewController *viewController;
+@property (strong, nonatomic) UINavigationController *navigationController;
 @property (strong, nonatomic) WarmupViewController *warmupViewController;
-@property(nonatomic, strong) MyLoginViewController *loginViewController;
+
 @property UIView* screenSaverView;
 
 -(void)showWarmup:(double)progress;

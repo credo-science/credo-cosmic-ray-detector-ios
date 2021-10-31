@@ -8,11 +8,9 @@
 
 #import "GLCameraAppDelegate.h"
 #import "GLApplication.h"
-
-#import "GLCameraViewController.h"
 #import "WarmupViewController.h"
 
-#import "MyLoginViewController.h"
+#import "Cosmic_Ray-Swift.h"
 
 GLCameraAppDelegate* gAppD = nil;
 
@@ -20,10 +18,6 @@ CGFloat gSavedSystemBrightness = 1.0;
 CGFloat gAppBrightness = 1.0;
 
 @implementation GLCameraAppDelegate
-
-
-@synthesize window = _window;
-@synthesize viewController = _viewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -33,12 +27,9 @@ CGFloat gAppBrightness = 1.0;
     gAppBrightness = gSavedSystemBrightness;
     [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(adjustBrightness) userInfo:nil repeats:YES];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.viewController = [[GLCameraViewController alloc] initWithNibName:@"GLCameraViewController" bundle:nil];
-    self.loginViewController = [[MyLoginViewController alloc] initWithNibName:@"MyLoginViewController" bundle:nil];
-    //self.viewController.useVideoFrames = [GLCameraViewController shouldUseVideoMode];
-    self.viewController.useVideoFrames = YES;
-    self.window.rootViewController = self.viewController;
+    UIViewController *loginVC = [[LoginViewController alloc]initWithNibName:@"LoginViewController" bundle:nil];
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:loginVC];
+    self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
     
     self.screenSaverView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -49,7 +40,6 @@ CGFloat gAppBrightness = 1.0;
 
     [self setUpChargingNotification];
     
-    [self showWarmup:0];
     return YES;
 }
 
@@ -65,7 +55,7 @@ CGFloat gAppBrightness = 1.0;
     if (self.warmupViewController == nil){
         self.warmupViewController = [[WarmupViewController alloc] initWithNibName:@"WarmupViewController" bundle:nil];
         [self.warmupViewController view];
-        [self.viewController presentViewController:self.warmupViewController animated:YES completion:nil];
+        [self.navigationController presentViewController:self.warmupViewController animated:YES completion:nil];
         progress = 100.0f;
     }
     self.warmupViewController.progress.progress = progress;
@@ -73,33 +63,32 @@ CGFloat gAppBrightness = 1.0;
 
 -(void)hideWarmup;
 {
-    if (self.warmupViewController && self.viewController.presentedViewController == self.warmupViewController)
+    if (self.warmupViewController && self.navigationController.presentedViewController == self.warmupViewController)
     {
-        [self.viewController dismissViewControllerAnimated:YES completion:^{
+        [self.navigationController dismissViewControllerAnimated:YES completion:^{
             self.warmupViewController = nil;
-            [self.viewController presentViewController:self.loginViewController animated:true completion:nil];
 //            [self performSelector:@selector(suggestServerUpload) withObject:nil afterDelay:4];
         }];
     }
 }
 
--(void)suggestServerUpload;
-{
-    BOOL uploadingOn = [[NSUserDefaults standardUserDefaults] boolForKey:@"UploadToServer"];
-    BOOL seenHint = [[NSUserDefaults standardUserDefaults] boolForKey:@"SeenHintToTurnOnServer"];
-    if (!uploadingOn && !seenHint)
-    {
-        UIAlertController* alertController = [UIAlertController alertControllerWithTitle:@"Global Cosmic Ray Project"
-                message:@"Please turn on server upload to help with the global cosmic ray observatory" preferredStyle:UIAlertControllerStyleAlert];
-        [alertController addAction:[UIAlertAction actionWithTitle:@"Settings" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                [self.viewController helpButtonPressed:self];
-                [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"SeenHintToTurnOnServer"];
-            }]];
-        
-        [self.viewController presentViewController:alertController animated:YES completion:nil];
-    }
-
-}
+//-(void)suggestServerUpload;
+//{
+//    BOOL uploadingOn = [[NSUserDefaults standardUserDefaults] boolForKey:@"UploadToServer"];
+//    BOOL seenHint = [[NSUserDefaults standardUserDefaults] boolForKey:@"SeenHintToTurnOnServer"];
+//    if (!uploadingOn && !seenHint)
+//    {
+//        UIAlertController* alertController = [UIAlertController alertControllerWithTitle:@"Global Cosmic Ray Project"
+//                message:@"Please turn on server upload to help with the global cosmic ray observatory" preferredStyle:UIAlertControllerStyleAlert];
+//        [alertController addAction:[UIAlertAction actionWithTitle:@"Settings" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//                [self.viewController helpButtonPressed:self];
+//                [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"SeenHintToTurnOnServer"];
+//            }]];
+//
+//        [self.viewController presentViewController:alertController animated:YES completion:nil];
+//    }
+//
+//}
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

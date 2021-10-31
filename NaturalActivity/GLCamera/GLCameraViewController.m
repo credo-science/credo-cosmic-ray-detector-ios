@@ -23,6 +23,7 @@
 
 #define PLAY_SOUNDS 0
 
+#import "Cosmic_Ray-Swift.h"
 
 const long kNumToShowInTop = 150;
 
@@ -80,6 +81,7 @@ const double kDesiredFrameIntervalSeconds = 30.0;
 @property NSDate* rayTime;
 @property NSMutableArray* blockImages;
 
+@property WarmupViewController *warmupViewController;
 
 @property BOOL deviceIsOlderNeedsPixelBoost;
 @end
@@ -809,8 +811,9 @@ const long kBadEdgeBlocks = 3;
 // current server we are talking to NO trailing /.
 +(NSString*)serverBase;
 {
+    return @"http://46.101.167.242";
 //        return @"http://127.0.0.1:8000";
-    return @"https://api.credo.science";
+//    return @"https://api.credo.science";
 }
 
 +(BOOL)locationServicesON;
@@ -842,6 +845,39 @@ const long kBadEdgeBlocks = 3;
     if (self.blockImages.count > 20)
         return; // likely a bogus daylight event. Also dont want to upload actual photos...
     
+    
+    NSMutableArray *detectionArray = [NSMutableArray array];
+    for (NSDictionary* imageDict in self.blockImages)
+    {
+        DetectionWrapper *detectionWrapper = [[DetectionWrapper alloc] init];
+        detectionWrapper.timestamp = [self.rayTime timeIntervalSince1970] * 1000;
+        detectionWrapper.latitude = self.recentLocation.coordinate.latitude;
+        detectionWrapper.longitude = self.recentLocation.coordinate.longitude;
+        detectionWrapper.altitude = self.recentLocation.altitude;
+    //    detectionWrapper.accuracy = self.locationManager.desiredAccuracy
+    //    detectionWrapper.provider = "gps"
+        detectionWrapper.width = [[imageDict objectForKey:@"width"] integerValue];
+        detectionWrapper.height = [[imageDict objectForKey:@"height"] integerValue];
+        detectionWrapper.x = [[imageDict objectForKey:@"origin_x"] integerValue];
+        detectionWrapper.y = [[imageDict objectForKey:@"origin_y"] integerValue];
+    //    detectionWrapper.average =
+    //    detectionWrapper.blacks =
+    //    detectionWrapper.ax =
+    //    detectionWrapper.ay =
+    //    detectionWrapper.az =
+    //    detectionWrapper.orientation =
+    //    detectionWrapper.temperature =
+    //    detectionWrapper.id =
+    //    detectionWrapper.black_threshold =
+        detectionWrapper.frame_content = imageDict[@"pngDataBase64"];
+    //    detectionWrapper.max =
+        [detectionArray addObject:detectionWrapper];
+    }
+    
+    [[CredoApi shared] detection:detectionArray completion:NULL];
+    
+    return;
+    
     // update stats
     //    [:deviceID, :deviceBrand, :deviceSys, :app_build, :ray_time, :score, :blocks, :last10Av, :last100Av, :last1000Av, :lat, :long, :elevation :images] :images is an array of [:id, :ray_id, :created_at, :updated_at, :name, :description, :origin_x, :origin_y, :width, :height, :pngDataBase64]
     NSMutableDictionary* ray = [NSMutableDictionary dictionary];
@@ -855,7 +891,7 @@ const long kBadEdgeBlocks = 3;
     // The plan in prod is to write the Json to a file, and have something watch the folder and upload at will.
     // I'm starting with direct upload...
     
-    NSString* urlString = [NSString stringWithFormat:@"%@/api/ray", [GLCameraViewController serverBase]];
+    NSString* urlString = [NSString stringWithFormat:@"%@/api/v2/detection", [GLCameraViewController serverBase]];
     [self placePostRequestWithURL:urlString
                          withData:ray
                       withHandler:^(NSURLResponse *response, NSData *rawData, NSError *error) {
