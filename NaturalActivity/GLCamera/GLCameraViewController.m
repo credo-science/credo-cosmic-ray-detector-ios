@@ -845,6 +845,7 @@ const long kBadEdgeBlocks = 3;
     if (self.blockImages.count > 20)
         return; // likely a bogus daylight event. Also dont want to upload actual photos...
     
+    [[CredoApi shared] ping];
     
     NSMutableArray *detectionArray = [NSMutableArray array];
     for (NSDictionary* imageDict in self.blockImages)
@@ -876,47 +877,6 @@ const long kBadEdgeBlocks = 3;
     
     [[CredoApi shared] detection:detectionArray completion:NULL];
     
-    return;
-    
-    // update stats
-    //    [:deviceID, :deviceBrand, :deviceSys, :app_build, :ray_time, :score, :blocks, :last10Av, :last100Av, :last1000Av, :lat, :long, :elevation :images] :images is an array of [:id, :ray_id, :created_at, :updated_at, :name, :description, :origin_x, :origin_y, :width, :height, :pngDataBase64]
-    NSMutableDictionary* ray = [NSMutableDictionary dictionary];
-    [self addStats:ray]; // :score, :blocks, :last10Av, :last100Av, :last1000Av
-    [self addDeviceInfo:ray]; //:deviceID, :deviceBrand, :deviceSys, :app_build,
-    [self addGeolocation:ray]; // : lat, :long, :elevation
-    
-    ray[@"images"] = self.blockImages;
-    
-    // Now upload this to the server.
-    // The plan in prod is to write the Json to a file, and have something watch the folder and upload at will.
-    // I'm starting with direct upload...
-    
-    NSString* urlString = [NSString stringWithFormat:@"%@/api/v2/detection", [GLCameraViewController serverBase]];
-    [self placePostRequestWithURL:urlString
-                         withData:ray
-                      withHandler:^(NSURLResponse *response, NSData *rawData, NSError *error) {
-                          NSString *string = [[NSString alloc] initWithData:rawData
-                                                                   encoding:NSUTF8StringEncoding];
-                          
-                          NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
-                          NSInteger code = [httpResponse statusCode];
-                          NSLog(@"%ld", (long)code);
-                          
-                          if (!(code >= 200 && code < 300)) {
-                              NSLog(@"ERROR (%ld): %@", (long)code, string);
-                              //[calledBy performSelector:failureCallback withObject:string];
-                          } else {
-                              NSLog(@"OK");
-                              
-                              NSDictionary *result = [NSDictionary dictionaryWithObjectsAndKeys:
-                                                      string, @"id",
-                                                      nil];
-                              //[calledBy performSelector:successCallback withObject:result];
-                          }
-                      }];
-
-    
-    //
     // Get data, then send into dispatch_async....
     //API
     // Need[:deviceID, :deviceBrand, :deviceSys, :app_build, :ray_time, :score, :blocks, :last10Av, :last100Av, :last1000Av, :lat, :long, :elevation]
