@@ -18,6 +18,7 @@
 		40BA4DE127209AF80024E7EA /* CredoApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BA4DE027209AF80024E7EA /* CredoApiError.swift */; };
 		40BA4DE42720A7C10024E7EA /* CreadoApi+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BA4DE32720A7C10024E7EA /* CreadoApi+Login.swift */; };
 		40BA4DE72720ACF30024E7EA /* UIViewController+Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BA4DE62720ACF30024E7EA /* UIViewController+Spinner.swift */; };
+		54869DA42730A33700BD6768 /* CredoApi+Ping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54869DA32730A33700BD6768 /* CredoApi+Ping.swift */; };
 		6D29779820703D73009AC20C /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D29779720703D72009AC20C /* MetalKit.framework */; };
 		6D29779A20703D83009AC20C /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D29779920703D83009AC20C /* Metal.framework */; };
 		6D29779C20703EC3009AC20C /* shader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 6D29779B20703EC3009AC20C /* shader.metal */; };
@@ -80,6 +81,7 @@
 		40BA4DE027209AF80024E7EA /* CredoApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredoApiError.swift; sourceTree = "<group>"; };
 		40BA4DE32720A7C10024E7EA /* CreadoApi+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreadoApi+Login.swift"; sourceTree = "<group>"; };
 		40BA4DE62720ACF30024E7EA /* UIViewController+Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Spinner.swift"; sourceTree = "<group>"; };
+		54869DA32730A33700BD6768 /* CredoApi+Ping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CredoApi+Ping.swift"; sourceTree = "<group>"; };
 		5EB4C2DFB5A62E8B2E294B60 /* Pods-Cosmic Ray.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cosmic Ray.release.xcconfig"; path = "Target Support Files/Pods-Cosmic Ray/Pods-Cosmic Ray.release.xcconfig"; sourceTree = "<group>"; };
 		6D29779720703D72009AC20C /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
 		6D29779920703D83009AC20C /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
@@ -188,6 +190,7 @@
 		4004A8DD271E2F0B0092FC0F /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				54869DA32730A33700BD6768 /* CredoApi+Ping.swift */,
 				4004A8E0271E2F840092FC0F /* CredoApi.swift */,
 				40BA4DE027209AF80024E7EA /* CredoApiError.swift */,
 				40BA4DE32720A7C10024E7EA /* CreadoApi+Login.swift */,
@@ -528,6 +531,7 @@
 				6D9D2EF11DBD5C8300E154D9 /* RadiationEvent.m in Sources */,
 				77547F9213DF518700B12AC0 /* EAGLView.m in Sources */,
 				6D29779C20703EC3009AC20C /* shader.metal in Sources */,
+				54869DA42730A33700BD6768 /* CredoApi+Ping.swift in Sources */,
 				4004A8E1271E2F840092FC0F /* CredoApi.swift in Sources */,
 				40BA4DE72720ACF30024E7EA /* UIViewController+Spinner.swift in Sources */,
 				6DFF83D51BB7386E00196F3A /* SwipeView.m in Sources */,
