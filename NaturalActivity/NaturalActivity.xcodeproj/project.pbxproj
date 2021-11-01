@@ -202,6 +202,7 @@
 		4004A8DE271E2F140092FC0F /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				54869DA52730A41900BD6768 /* Help */,
 				4004A8DF271E2F1D0092FC0F /* Login */,
 			);
 			path = Screens;
@@ -250,6 +251,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		54869DA52730A41900BD6768 /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				6DCC04AE1DDA52850002EAD5 /* HelpViewController.h */,
+				6DCC04AF1DDA52850002EAD5 /* HelpViewController.m */,
+				6DCC04B01DDA52850002EAD5 /* HelpViewController.xib */,
+			);
+			path = Help;
+			sourceTree = "<group>";
+		};
 		6D55AEDB2061C4C900825BEA /* OpenCL */ = {
 			isa = PBXGroup;
 			children = (
@@ -296,9 +307,6 @@
 				6DBCE3B020719920008CFF22 /* pixelMath.h */,
 				6DBCE3B120719920008CFF22 /* pixelMath.c */,
 				6D55AEE02065D3CD00825BEA /* MetalPixelProcessor.h */,
-				6DCC04AE1DDA52850002EAD5 /* HelpViewController.h */,
-				6DCC04AF1DDA52850002EAD5 /* HelpViewController.m */,
-				6DCC04B01DDA52850002EAD5 /* HelpViewController.xib */,
 				6DCC04A01DD66D8A0002EAD5 /* Launch Screen.storyboard */,
 				6DCC049E1DD66D540002EAD5 /* Images.xcassets */,
 				6D9D2ED81DBD1E2900E154D9 /* ImageViewer */,
