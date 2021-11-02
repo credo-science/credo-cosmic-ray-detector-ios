@@ -38,8 +38,6 @@
 		6DBCE3B220719921008CFF22 /* pixelMath.c in Sources */ = {isa = PBXBuildFile; fileRef = 6DBCE3B120719920008CFF22 /* pixelMath.c */; };
 		6DCC049F1DD66D540002EAD5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DCC049E1DD66D540002EAD5 /* Images.xcassets */; };
 		6DCC04A11DD66D8A0002EAD5 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DCC04A01DD66D8A0002EAD5 /* Launch Screen.storyboard */; };
-		6DCC04A51DD66E5B0002EAD5 /* icon-1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DCC04A31DD66E5B0002EAD5 /* icon-1024.png */; };
-		6DCC04A61DD66E5B0002EAD5 /* iphone6.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DCC04A41DD66E5B0002EAD5 /* iphone6.png */; };
 		6DCC04AC1DDA16450002EAD5 /* WarmupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCC04AA1DDA16450002EAD5 /* WarmupViewController.m */; };
 		6DCC04AD1DDA16450002EAD5 /* WarmupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DCC04AB1DDA16450002EAD5 /* WarmupViewController.xib */; };
 		6DCC04B11DDA52850002EAD5 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCC04AF1DDA52850002EAD5 /* HelpViewController.m */; };
@@ -118,8 +116,6 @@
 		6DBCE3B32071A265008CFF22 /* pixelMathImplementation.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = pixelMathImplementation.c; sourceTree = "<group>"; };
 		6DCC049E1DD66D540002EAD5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Cosmic Ray/Images.xcassets"; sourceTree = "<group>"; };
 		6DCC04A01DD66D8A0002EAD5 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		6DCC04A31DD66E5B0002EAD5 /* icon-1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-1024.png"; sourceTree = "<group>"; };
-		6DCC04A41DD66E5B0002EAD5 /* iphone6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone6.png; sourceTree = "<group>"; };
 		6DCC04A91DDA16450002EAD5 /* WarmupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WarmupViewController.h; sourceTree = "<group>"; };
 		6DCC04AA1DDA16450002EAD5 /* WarmupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WarmupViewController.m; sourceTree = "<group>"; };
 		6DCC04AB1DDA16450002EAD5 /* WarmupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WarmupViewController.xib; sourceTree = "<group>"; };
@@ -202,6 +198,7 @@
 		4004A8DE271E2F140092FC0F /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				54869DA727319E8A00BD6768 /* Warmup */,
 				54869DA52730A41900BD6768 /* Help */,
 				4004A8DF271E2F1D0092FC0F /* Login */,
 			);
@@ -261,6 +258,16 @@
 			path = Help;
 			sourceTree = "<group>";
 		};
+		54869DA727319E8A00BD6768 /* Warmup */ = {
+			isa = PBXGroup;
+			children = (
+				6DCC04A91DDA16450002EAD5 /* WarmupViewController.h */,
+				6DCC04AA1DDA16450002EAD5 /* WarmupViewController.m */,
+				6DCC04AB1DDA16450002EAD5 /* WarmupViewController.xib */,
+			);
+			path = Warmup;
+			sourceTree = "<group>";
+		};
 		6D55AEDB2061C4C900825BEA /* OpenCL */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,15 +296,6 @@
 			path = ImageViewer;
 			sourceTree = "<group>";
 		};
-		6DCC04A21DD66E5B0002EAD5 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				6DCC04A31DD66E5B0002EAD5 /* icon-1024.png */,
-				6DCC04A41DD66E5B0002EAD5 /* iphone6.png */,
-			);
-			path = Images;
-			sourceTree = "<group>";
-		};
 		77547F6713DF518600B12AC0 = {
 			isa = PBXGroup;
 			children = (
@@ -314,7 +312,6 @@
 				6D55AEDB2061C4C900825BEA /* OpenCL */,
 				77547F7513DF518600B12AC0 /* Frameworks */,
 				77547F7313DF518600B12AC0 /* Products */,
-				6DCC04A21DD66E5B0002EAD5 /* Images */,
 				4E1F45B96EA2E99A2D12C520 /* Pods */,
 			);
 			sourceTree = "<group>";
@@ -374,9 +371,6 @@
 				77547F8A13DF518700B12AC0 /* GLCameraAppDelegate.m */,
 				6D5949EC205D694E00FD70D6 /* GLApplication.h */,
 				6D5949ED205D694E00FD70D6 /* GLApplication.m */,
-				6DCC04A91DDA16450002EAD5 /* WarmupViewController.h */,
-				6DCC04AA1DDA16450002EAD5 /* WarmupViewController.m */,
-				6DCC04AB1DDA16450002EAD5 /* WarmupViewController.xib */,
 				77547F8C13DF518700B12AC0 /* Shader.fsh */,
 				77547F8E13DF518700B12AC0 /* Shader.vsh */,
 				77547F9013DF518700B12AC0 /* EAGLView.h */,
@@ -466,10 +460,8 @@
 				6DCC04AD1DDA16450002EAD5 /* WarmupViewController.xib in Resources */,
 				6DCC04A11DD66D8A0002EAD5 /* Launch Screen.storyboard in Resources */,
 				6DCC049F1DD66D540002EAD5 /* Images.xcassets in Resources */,
-				6DCC04A61DD66E5B0002EAD5 /* iphone6.png in Resources */,
 				77547F8D13DF518700B12AC0 /* Shader.fsh in Resources */,
 				40394470271CB95100064A08 /* LoginViewController.xib in Resources */,
-				6DCC04A51DD66E5B0002EAD5 /* icon-1024.png in Resources */,
 				77547F8F13DF518700B12AC0 /* Shader.vsh in Resources */,
 				77547F9813DF518700B12AC0 /* GLCameraViewController.xib in Resources */,
 				4004A8D8271E1AF30092FC0F /* Colors.xcassets in Resources */,
