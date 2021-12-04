@@ -10,8 +10,8 @@ import Alamofire
 
 class CredoApi: NSObject {
     
-//    static let BASE_URL = "https://api.credo.science"
-    static let BASE_URL = "http://46.101.167.242"
+    static let BASE_URL = "https://api.credo.science"
+    // static let BASE_URL = "http://46.101.167.242"
     
     // Singleton
     @objc static let shared = CredoApi()

@@ -33,6 +33,13 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Based on Cosmic Ray by Thomas and Palmer Andersen" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ZZ-gN-w6R">
+                    <rect key="frame" x="32" y="611" width="350" height="65"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
@@ -40,7 +47,7 @@
                 <constraint firstItem="c70-Ii-fuE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="RQ2-Tq-rSW"/>
                 <constraint firstAttribute="trailing" secondItem="c70-Ii-fuE" secondAttribute="trailing" constant="32" id="e3e-fp-N4s"/>
             </constraints>
-            <point key="canvasLocation" x="-5" y="154"/>
+            <point key="canvasLocation" x="-5.7971014492753632" y="153.2608695652174"/>
         </view>
     </objects>
     <resources>

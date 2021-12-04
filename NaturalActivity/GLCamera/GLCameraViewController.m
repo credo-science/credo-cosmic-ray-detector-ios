@@ -466,18 +466,41 @@ const long kBadEdgeBlocks = 3;
     countTH -= 1;
     countTW -= 1;
     
-    long width = kTriggerZoneSize*3;
-    long height = kTriggerZoneSize*3;
-    long bytesPerRow = width*4;
+    int width = 64;
+    int height = 64;
+    int bytesPerRow = width*4;
     BOOL needLowLevelBoost = self.deviceIsOlderNeedsPixelBoost;
 
-    uint8_t* newImagePixels = malloc(width*height*4);
+    uint8_t* newImagePixels = malloc(width*height*4); // 64x64 pixels image
     long newH = 0;
-    for (long countH = countTH*kTriggerZoneSize; countH < (countTH + 3)*kTriggerZoneSize; countH++)
+    
+    // find brightest pixel position
+    long brightestPixelH = 0;
+    long brightestPixelW = 0;
+    
+    double lastPixelColor = 0.0f;
+    
+    for(long countH = countTH*kTriggerZoneSize; countH < (countTH + 3)*kTriggerZoneSize; countH++) {
+        uint8_t * row = pixels + (countH * self.bytesPerRow);
+        for(long countW = countTW*kTriggerZoneSize; countW < (countTW + 3) * kTriggerZoneSize; countW++) {
+            uint8_t* pixel = row + (countW*4);
+            double pixelColor = (pixel[0] + pixel[1] + pixel[2]);
+            if(lastPixelColor < pixelColor) {
+                lastPixelColor = pixelColor;
+                brightestPixelH = countH;
+                brightestPixelW = countW;
+            }
+        }
+    }
+#if DEBUG
+    NSLog(@"upper left corner: %ld x %ld", (long) countTH*kTriggerZoneSize, (long) countTW * kTriggerZoneSize);
+    NSLog(@"brightness pixel width: %d x %d", (int) brightestPixelW, (int) brightestPixelH);
+#endif
+    for (long countH = brightestPixelH - 32; countH < brightestPixelH + 32; countH++)
     {
         uint8_t* row = pixels + (countH * self.bytesPerRow);
         long newW = 0;
-        for (long countW = countTW*kTriggerZoneSize; countW < (countTW + 3)*kTriggerZoneSize; countW++)
+        for (long countW = brightestPixelW - 32; countW < brightestPixelW + 32; countW++)
         {
             uint8_t* pixel = row + (countW*4);
             
@@ -832,6 +855,8 @@ const long kBadEdgeBlocks = 3;
 #pragma mark API server upload
 -(void)createJSONOfEvent;
 {
+    [[CredoApi shared] ping];
+    
     self.eventCount++;
     if (self.eventCount < 10) // change to like 10 on prod
         return;
@@ -845,7 +870,6 @@ const long kBadEdgeBlocks = 3;
     if (self.blockImages.count > 20)
         return; // likely a bogus daylight event. Also dont want to upload actual photos...
     
-    [[CredoApi shared] ping];
     
     NSMutableArray *detectionArray = [NSMutableArray array];
     for (NSDictionary* imageDict in self.blockImages)
