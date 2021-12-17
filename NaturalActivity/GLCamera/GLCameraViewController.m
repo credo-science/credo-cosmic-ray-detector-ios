@@ -834,9 +834,9 @@ const long kBadEdgeBlocks = 3;
 // current server we are talking to NO trailing /.
 +(NSString*)serverBase;
 {
-    return @"http://46.101.167.242";
+//    return @"https://46.101.167.242";
 //        return @"http://127.0.0.1:8000";
-//    return @"https://api.credo.science";
+    return @"https://api.credo.science";
 }
 
 +(BOOL)locationServicesON;
