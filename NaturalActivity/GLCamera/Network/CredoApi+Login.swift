@@ -54,6 +54,9 @@ extension CredoApi {
         if isEmail {
             request = request.copy(email: trimmedLogin, username: nil)
         }
+        
+        CredoApi.last_on_time = Int64(Date().timeIntervalSince1970 * 1000);
+        
         AF.request("\(CredoApi.BASE_URL)/api/v2/user/login",
                 method: .post,
                 parameters: request,

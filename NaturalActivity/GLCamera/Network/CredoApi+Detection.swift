@@ -90,6 +90,7 @@ extension CredoApi {
                    headers: headers
         ).response { response in
             let data = try? response.result.get()
+            CredoApi.last_on_time = Int64(Date().timeIntervalSince1970 * 1000);
             completion?(data)
         }
     }

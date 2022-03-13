@@ -13,6 +13,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var registerButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +50,8 @@ class LoginViewController: UIViewController {
         loginButton.alpha = isLoginButtonEnabled ? 1.0 : 0.5
     }
 
+
+    
     @IBAction func loginButtonPressed(_ sender: Any) {
         guard let login = loginTextField.text,
               let password = passwordTextField.text else {
@@ -56,6 +59,11 @@ class LoginViewController: UIViewController {
         }
         let credentials = Credentials(login: login, password: password)
         performUserLogin(credentials)
+    }
+    
+    @IBAction func registerButtonPressed(_ sender: Any) {
+        let registerURL = NSURL(string:"https://api.credo.science/web/register/")! as URL;
+        UIApplication.shared.open(registerURL, options: [:], completionHandler: nil);
     }
 
     private func performUserLogin(_ credentials: Credentials) {

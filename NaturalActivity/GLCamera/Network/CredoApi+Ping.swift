@@ -14,14 +14,25 @@ struct PingRequest: Encodable, CommonRequest {
     let device_model: String
     let system_version: String
     let app_version: String
-    let on_time: Int
+    let on_time: Int64
     let delta_time: Int64
     let timestamp: Int64
 }
 
 extension CredoApi {
+    static var last_on_time: Int64 = 0;
+    
     @objc func ping() {
-        let request = PingRequest(device_id: appVersion, device_type: deviceID, device_model: deviceType, system_version: deviceModel, app_version: appVersion, on_time: 0, delta_time: 0, timestamp: Int64(Date().timeIntervalSince1970 * 1000)
+        let time_now: Int64 = Int64(Date().timeIntervalSince1970 * 1000);
+        let delta_time: Int64 = time_now - CredoApi.last_on_time
+        let request = PingRequest(device_id: appVersion,
+                                  device_type: deviceID,
+                                  device_model: deviceType,
+                                  system_version: deviceModel,
+                                  app_version: appVersion,
+                                  on_time: CredoApi.last_on_time,
+                                  delta_time: delta_time,
+                                  timestamp: time_now
         )
         
         let headers: HTTPHeaders = [
@@ -34,6 +45,7 @@ extension CredoApi {
                     encoder: JSONParameterEncoder.default,
                     headers: headers
         ).response { response in
+            CredoApi.last_on_time = Int64(Date().timeIntervalSince1970 * 1000);
         }
     }
 }
