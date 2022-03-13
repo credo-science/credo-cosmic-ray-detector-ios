@@ -11,9 +11,9 @@ import Alamofire
 class CredoApi: NSObject {
     
     #if DEBUG
-    static let BASE_URL = "https://api.credo.science"
-    #else
     static let BASE_URL = "http://46.101.167.242"
+    #else
+    static let BASE_URL = "https://api.credo.science"
     #endif
     
     // Singleton
